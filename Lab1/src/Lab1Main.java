@@ -39,7 +39,8 @@ public class Lab1Main {
      */
     public static void displayAnswer() {
         double percentGirls = ((double)girls / total) * 100;
-        double percentBoys = ((double)boys / total) * 100;
-        System.out.println("% girls: " + percentGirls + ", %boys: " + percentBoys + ", total number of girls: " + girls);
+        System.out.println("Number of Girls: " + girls);
+        System.out.println("Number of Boys: " + boys);
+        System.out.printf("Percentage Of The Population Which Are Female: %4.2f%%.%n", percentGirls);
     }
 }
