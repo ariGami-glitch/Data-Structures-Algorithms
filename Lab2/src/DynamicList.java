@@ -132,5 +132,38 @@ public class DynamicList<Type> {
     public int size() {
         return size;
     }
+
+    public void set(int index, Type item) throws IndexOutOfBoundsException {
+        if (index < 0 || index >= size) {
+            throw new IndexOutOfBoundsException();
+        }
+        else {
+            array[index] = item;
+        }
+    }
+
+    public int lastIndexOf(Type item) {
+        int index = size - 1;
+        int indexOfItem = -1;
+        while(index >= 0) {
+            if(array[index] == item) {
+                indexOfItem = index;
+                break;
+            }
+            index--;
+        }
+        return index;
+    }
+
+    public void trimToSize() {
+        System.out.println("Size = " + size);
+        //now to resize it
+        Type [] temp = (Type[]) new Object[size];
+        for(int i = 0; i < size; i++) {
+            temp[i] = array[i];
+        }
+        array = temp;
+        System.out.println("Capacity = " + array.length);
+    }
 } 
 
