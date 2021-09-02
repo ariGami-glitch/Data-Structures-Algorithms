@@ -133,36 +133,67 @@ public class DynamicList<Type> {
         return size;
     }
 
+    /**
+     * This method changes an item in the list given an index and item
+     * @param index an int which represent the position the item will be added
+     * @param item any Type that will be added to the position given by the index
+     * @throws IndexOutOfBoundsException if the given index is not in the array
+     */
     public void set(int index, Type item) throws IndexOutOfBoundsException {
+        //This checks if the index is valid
         if (index < 0 || index >= size) {
             throw new IndexOutOfBoundsException();
         }
+        //if the index is valid, then change the item in the list
         else {
             array[index] = item;
         }
     }
 
+    /**
+     * This method searches the array for the last instance of a given item. If it
+     * is not found, it will return -1.
+     * @param item a Type that is being searched for
+     * @return an int that represents the index at which the item was found
+     */
     public int lastIndexOf(Type item) {
+        //this sets the last index
         int index = size - 1;
+        //this sets the index of the item to -1 in case it is not found
         int indexOfItem = -1;
+        //this searches for the item
         while(index >= 0) {
+            //if the item is found, the index of the item is changed from a -1 to the
+            //current index in the loop and breaks the loop.
             if(array[index] == item) {
                 indexOfItem = index;
                 break;
             }
+            //this decreases the current index so that we can work from the end of the array to
+            //the front
             index--;
         }
         return index;
     }
 
+    /**
+     * This method resizes the array so that it is exactly large enough to hold the
+     * items.
+     */
     public void trimToSize() {
+        //for testing purposes, the current size of the array is printed
         System.out.println("Size = " + size);
         //now to resize it
+        //this creates a new empty array
         Type [] temp = (Type[]) new Object[size];
+        //this goes through the current array and copy the items from it into the temporary
+        //array created above.
         for(int i = 0; i < size; i++) {
             temp[i] = array[i];
         }
+        //after copying the array, put the current array equal to the temp created
         array = temp;
+        //for testing purposes, the capacity after the resize is printed
         System.out.println("Capacity = " + array.length);
     }
 } 
