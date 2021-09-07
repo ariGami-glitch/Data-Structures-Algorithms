@@ -7,6 +7,7 @@ public class ListMain {
         }
 
         // test the size
+        letters.size();
         System.out.println("There are " + letters.size() + " letters.");
 
         // test contains

@@ -102,5 +102,68 @@ public class LinkedList<Type> {
     public void printBackwards() {
         printBackwards(head);
     }
+
+    /**
+     * This method returns the number of elements in the list
+     *
+     * @return an int that represents the size of the list
+     */
+    public int size() {
+        //define a variable for size
+        int sz = 0;
+        //iterate through the linked list and count the number of elements
+        Node current = head;
+        while (current != null) {
+            sz += 1;
+            current = current.next;
+        }
+        return sz;
+    }
+
+    /**
+     * This method checks it a given item exist in the list
+     *
+     * @param item which can be any type and represents the thing being checked for
+     * @return hasit a boolean that represents if the item was found. True if found and false
+     * otherwise.
+     */
+    public boolean contains(Type item) {
+        //Initialize a boolean on whether the list has it to false. Assume they
+        //do not have it
+        boolean hasit = false;
+        //Go through the nodes in the linked list until you get the item that is
+        //being searched for.
+        Node curr = head;
+        while(curr != null) {
+            if(curr.data == item) {
+                hasit = true;
+                //breaks out of loop if found
+                break;
+            }
+            else {
+                curr = curr.next;
+            }
+        }
+        return hasit;
+    }
+
+    /**
+     * This method gets an item given the index of it
+     *
+     * @param index an int which represents the position the item is in
+     * @return item which is any type that is needed to be returned
+     */
+    public Type get(int index) {
+        //declare variable for the item being returned given index
+        Type item;
+        //Go through the linked list until you reach index or ith node in the
+        // linked list given, then return the data associated with that ith node.
+        Node current = head;
+        for(int i = 0; i < index; i++) {
+            current = current.next;
+        }
+        item = current.data;
+        return item;
+    }
 }
 
