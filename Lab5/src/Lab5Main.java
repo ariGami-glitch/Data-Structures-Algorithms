@@ -88,6 +88,8 @@ public class Lab5Main {
                 System.exit(0);
             }
         }
+
+        //call the method to print out whether the input is well-formatted
         printResults(stack, input);
     }
 
