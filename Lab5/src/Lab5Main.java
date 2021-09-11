@@ -4,14 +4,20 @@
  * I pledge
  */
 
-import java.util.ArrayDeque;
 import java.util.Stack;
 import java.util.Scanner;
 
 /**
  * This class represents the main that will run the program.
+ * The program checks if the user input of brackets and parentheses are well-formed
  */
 public class Lab5Main {
+    /**
+     * This method check if the user input only contains brackets or parentheses
+     * @param s a String that represents part of the user input
+     * @return a String if part of the user input is valid
+     * @throws Exception if the input is not either a bracket or parenthesis
+     */
     public static String checkBrackPar(String s) throws Exception{
         //check if it is a parentheses or brackets
         if(s.equals("(") || s.equals(")") || s.equals("[") || s.equals("]")) {
@@ -24,6 +30,9 @@ public class Lab5Main {
         }
     }
 
+    /**
+     * This method represents the main
+     */
     public static void main(String[] args) {
         Scanner scnr = new Scanner(System.in);
         String input;
@@ -79,7 +88,15 @@ public class Lab5Main {
                 System.exit(0);
             }
         }
+        printResults(stack, input);
+    }
 
+    /**
+     * This method prints out whether the string of input is well-formatted
+     * @param stack a Stack object generated from the user input
+     * @param input a String that represents the user's input
+     */
+    public static void printResults(Stack stack, String input) {
         //stack is well-formed if stack is empty
         if(stack.empty()) {
             System.out.println(input + " is well-formed.");
@@ -89,6 +106,5 @@ public class Lab5Main {
         else {
             System.out.println(input + " is NOT well-formed.");
         }
-
     }
 }
