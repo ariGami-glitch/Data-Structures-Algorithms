@@ -1,0 +1,20 @@
+Ariana Tran
+CPSC 340
+9/9/21
+I pledge
+
+Data Structure Side Time
+ArrayList       End   ---       28.67 ms
+ArrayList       Start ---       23044.67 ms
+LinkedList      End   ---       26.67 ms
+LinkedList      Start ---       27.33 ms
+
+1. The data structure that was better for adding to the end was the LinkedList.
+2. The data structure that was better for adding to the start was the LinkedList
+as well.
+3. There are small differences between the linked list and the ArrayList when
+adding to the end of the list. There is also a small difference between the adding
+to the end versus the start for the linked list. However, the big difference lies
+in when adding to the end versus the start for the ArrayList, as well as when
+comparing the time for adding to the start of the list in the ArrayList versus
+linked list.
