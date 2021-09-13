@@ -19,6 +19,10 @@ class Queue {
 
         // enqueue - add at end
         public void enqueue(int number) {
+            if(full()) {
+                //call resize method
+                resize();
+            }
             end++;
             if (end == array.length) {
                 end = 0;
@@ -34,6 +38,10 @@ class Queue {
 
         // dequeue - remove from start
         public int dequeue() {
+            //check if the array queue is empty, if so throw an exception
+            if(empty()) {
+                throw new NoSuchElementException("Empty array queue.");
+            }
             int returnVal = array[start];
             start++;
             if (start == array.length) {
@@ -62,6 +70,36 @@ class Queue {
         public boolean full() {
             return size == array.length;
         }
+
+    /**
+     * This method resizes the array to double the size and copies
+     * over the elements from the old array
+     *
+     * @return an array of integers that represents the new array made
+     */
+    private void resize() {
+        int[] newArray = new int[array.length * 2]; //make the new array but double the size
+        int original = start; //keeps track of where we are in the old array, so start
+        int now = 0; //keeps track of where we are in the new array
+        while(now < array.length) {
+            //copy element from original array into newArray
+            newArray[now] = array[original];
+            //increment now
+            now++;
+            //increment original
+            original++;
+            //if original is equal to old size of array, wrap it back to 0
+            if(original == array.length) {
+                original = 0;
+            }
+        }
+        //set start to 0
+        start = 0;
+        //set end to now - 1
+        end = now - 1;
+        //use newArray instead of old array
+        array = newArray;
+    }
 }
 
 public class ArrayQueue {
