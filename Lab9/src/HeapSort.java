@@ -186,7 +186,8 @@ public class HeapSort {
  * merge sort was of course faster, measuring under 50 microseconds.
  *
  * 2. What is the Big-O of heapsort?
- * O(n log n) in the worst case and average case and O(n) in the best case. When we
- * think of Big O, we think of the upper bound, which would be O(n log n).
+ * Insertion and dequeue takes O(log n), but sometimes the root would be pushed
+ * to the last node which would take O(log n) time, but since this is repeated
+ * until the heap is empty, then you get O(n log n).
  */
 
