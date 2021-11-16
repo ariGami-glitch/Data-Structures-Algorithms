@@ -1,8 +1,10 @@
-       insert ACGT     
-    
+       insert ACGT
 
 
- insert            AAAA   
+
+ insert            AAAA
+
+ insert ACGT
  insert AA
 insert                 AAACCCCGGTGAAAACGTA
 insert       ACTGGGAA          
