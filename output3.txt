@@ -1,0 +1,11 @@
+sequence ACGT inserted at level 0
+tree dump:
+ACGT
+sequence CGTA inserted at level 1
+tree dump:
+I
+  ACGT
+  CGTA
+  E
+  E
+  E

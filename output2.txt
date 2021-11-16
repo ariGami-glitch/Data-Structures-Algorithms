@@ -1,0 +1,3 @@
+sequence AGCT inserted at level 0
+tree dump:
+AGCT
