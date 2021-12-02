@@ -2,3 +2,5 @@ insert ACGT
 print
 insert CGTA
 print
+remove CGTA
+print

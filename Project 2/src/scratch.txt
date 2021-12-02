@@ -1,0 +1,61 @@
+
+                /*//check sequence of rt and insert it accordingly
+                String rtsequence;
+                //check if one is the prefix of the other, method called compare if prefix.
+                //check the root and insert it accordingly
+                rtsequence = ((LeafNode)(rt)).getStringSequence();
+                if(d >= rtsequence.length()) {
+                    rt.setDepth(d+1);
+                    in.set$(helperInsert(in.get$(), ((LeafNode)(rt)).getStringSequence(), d + 1));
+                }
+                else {
+                    //if not prefix of the other, then insert accordingly
+                    //otherwise, the shorter one will be assigned the $
+                    rtsequence = (String)(((LeafNode)(rt)).getSequence().get(d));
+                    //System.out.println(rtsequence); PASSED
+                    if(rtsequence.equals("A")) {
+                        in.setA(helperInsert(in.getA(), ((LeafNode)(rt)).getStringSequence(), d + 1));
+                        //rt.setDepth(d+1);
+                        //in.setA(rt);
+                    }
+                    else if(rtsequence.equals("C")) {
+                        in.setC(helperInsert(in.getC(), ((LeafNode)(rt)).getStringSequence(), d + 1));
+                        //rt.setDepth(d+1);
+                        //in.setC(rt);
+                    }
+                    else if(rtsequence.equals("G")) {
+                        in.setG(helperInsert(in.getG(), ((LeafNode)(rt)).getStringSequence(), d + 1));
+                        //rt.setDepth(d+1);
+                        //in.setG(rt);
+
+                    }
+                    else if(rtsequence.equals("T")) {
+                        in.setT(helperInsert(in.getT(), ((LeafNode)(rt)).getStringSequence(), d + 1));
+                        //rt.setDepth(d+1);
+                        //in.setT(rt);
+                    }
+                }
+
+
+                //check sequence of the new node and insert it accordingly
+                String rtsequence1;
+                if(d >= n.length()) {
+                    in.set$(helperInsert(in.get$(), n, d + 1));
+                }
+                else {
+                    rtsequence1= (String)(((LeafNode)(ln)).getSequence().get(d));
+                    //System.out.println(rtsequence); PASSED
+
+                    if(rtsequence1.equals("A")) {
+                        in.setA(helperInsert(in.getA(), n, d + 1));
+                    }
+                    else if(rtsequence1.equals("C")) {
+                        in.setC(helperInsert(in.getC(), n, d + 1));
+                    }
+                    else if(rtsequence1.equals("G")) {
+                        in.setG(helperInsert(in.getG(), n, d + 1));
+                    }
+                    else if(rtsequence1.equals("T")) {
+                        in.setT(helperInsert(in.getT(), n, d + 1));
+                    }
+                }*/

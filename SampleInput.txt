@@ -1,12 +1,18 @@
        insert ACGT
-
+       insert CGTA
+       print
+       insert GTAA
+       print
 
 
  insert            AAAA
+ print
 
  insert ACGT
  insert AA
+ print
 insert                 AAACCCCGGTGAAAACGTA
+print
 insert       ACTGGGAA          
 
 remove       ACGT         

@@ -1,0 +1,30 @@
+print
+print 	lengths
+print stats
+insert ACTGG
+          insert      ACG
+insert GTAAA
+
+
+	insert	TAGAACGTA
+insert 		AAAAAAAAAA
+                               insert ACG
+	insert ACGT
+insert GATAA
+insert GTAAA
+
+
+insert CCCCG
+  insert T
+print
+print    lengths
+   print    stats
+ remove T
+print
+ print lengths
+print stats
+remove           ACGTTT
+remove GTA
+
+
+print stats

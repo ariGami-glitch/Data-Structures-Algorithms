@@ -36,32 +36,35 @@ public class DNAtree {
 
                 //if remove
                 else if(input[0].equals("remove")) {
-                    System.out.println("Not to remove. Bye bitch!");
+                    //System.out.println("Not to remove. Bye bitch!");
+                    DNA.remove(input[1]);
                 }
 
                 //if search
                 else if(input[0].equals("search")) {
-                    System.out.println("What are we searching for?");
+                    if(input[1].contains("$")) {
+                        DNA.searchExact(input[1].substring(0, input[1].length() - 1));
+                    }
+                    else {
+                        DNA.search(input[1]);
+                    }
 
                 }
 
                 //if print
                 else if(input[0].equals("print")) {
                     if(input.length == 1) {
-                        DNA.print();
+                        DNA.print("regular");
                     }
-                    //if print lengths
                     else if(input[1].equals("lengths")) {
-                        System.out.println("Now we talking printing lengths");
+                        DNA.print("lengths");
                     }
 
                     //if print stats
                     else if(input[1].equals("stats")) {
-                        System.out.println("I need print STATS!");
+                        DNA.print("stats");
                     }
-
                 }
-
             }
         }
         catch(FileNotFoundException fnfe) {
@@ -74,6 +77,8 @@ public class DNAtree {
         if(line.isEmpty()) {
             return null;
         }
+        //get rid of the tabs
+        line = line.replaceAll("\t", " ");
         //split the string
         String[] split = line.split(" ");
         //get rid of unnecessary empty element
@@ -95,7 +100,7 @@ public class DNAtree {
         String[] input = new String[size];
 
         for(int i = 0; i < size; i++) {
-            input[i] = split[i];
+            input[i] = split[i].trim();
         }
         return input;
     }

@@ -9,6 +9,10 @@ public class LeafNode extends Node {
     private LinkedList sequence;
     private int depth;
     private int length;
+    private double anum;
+    private double cnum;
+    private double gnum;
+    private double tnum;
 
     /*default constructor*/
     public LeafNode() {
@@ -19,6 +23,11 @@ public class LeafNode extends Node {
         convertSequence(seq);
         this.seq = seq;
         length = seq.length();
+
+        anum = 0;
+        cnum = 0;
+        gnum = 0;
+        tnum = 0;
     }
 
     /*This method gets the type of node this is, which is a leaf node*/
@@ -56,10 +65,46 @@ public class LeafNode extends Node {
         return length;
     }
 
+    //this sets the sequence of the leaf node
     public void setSeq(String seq) {
         this.seq = seq;
         convertSequence(this.seq);
         length = this.seq.length();
 
     }
+
+    //this method gets that stat for the sequence
+    public String getStat() {
+        for(int i = 0; i < length; i++) {
+            String cur = (String)sequence.get(i);
+            if(cur.equals("A")) {
+                anum += 1;
+            }
+            else if(cur.equals("C")) {
+                cnum += 1;
+            }
+            else if(cur.equals("G")) {
+                gnum += 1;
+            }
+            else {
+                tnum += 1;
+            }
+        }
+        double aratio = (anum / length) * 100.0;
+        double cratio = (cnum / length) * 100.0;
+        double gratio = (gnum / length) * 100.0;
+        double tratio = (tnum / length) * 100.0;
+
+        String message = "" + "A:" + String.format("%.2f", aratio);
+        message += " C:" + String.format("%.2f", cratio);
+        message += " G:" + String.format("%.2f", gratio);
+        message += " T:" + String.format("%.2f", tratio);
+        anum = 0;
+        cnum = 0;
+        gnum = 0;
+        tnum = 0;
+
+        return message;
+    }
+
 }

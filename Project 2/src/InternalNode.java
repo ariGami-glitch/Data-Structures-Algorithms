@@ -8,6 +8,7 @@ public class InternalNode extends Node {
     private Node g;
     private Node $;
     private String seq;
+    private int numLeaf;
 
     /*Default constructor*/
     public InternalNode() {
@@ -80,6 +81,26 @@ public class InternalNode extends Node {
     }
     public String getStringSequence() {
         return seq;
+    }
+
+    public int getNumLeaf() {
+        numLeaf = 5;
+        if(get$().getProperty().equals("FW")) {
+            numLeaf -= 1;
+        }
+        if(getA().getProperty().equals("FW")) {
+            numLeaf -= 1;
+        }
+        if(getC().getProperty().equals("FW")) {
+            numLeaf -= 1;
+        }
+        if(getG().getProperty().equals("FW")) {
+            numLeaf -= 1;
+        }
+        if(getT().getProperty().equals("FW")) {
+            numLeaf -= 1;
+        }
+        return numLeaf;
     }
 
 }

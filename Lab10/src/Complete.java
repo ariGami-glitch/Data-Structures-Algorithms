@@ -1,3 +1,10 @@
+/**
+ * Ariana Tran
+ * CPSC 340
+ * 11/18/2021
+ *
+ * I pledge
+ */
 // Complete.java
 
 class Graph<Type> {
@@ -51,15 +58,30 @@ class Graph<Type> {
 
     // return whether the graph is complete
     boolean complete() {
-        // fill in!
+        boolean completeGraph = true;
+        for(int i = 0; i < size; i++) {
+            for(int j = 0; j < size; j++) {
+                /*if an edge between two vertices has a weight of 0, then that means there was
+                no edge between the two vertices to begin with, thus, it is not a
+                complete tree*/
+                if(i == j) {
+                    continue;
+                }
+                if(matrix[i][j] == 0) {
+                    completeGraph = false;
+                    break;
+                }
+            }
+        }
 
-        return true;
+        return completeGraph;
     }
 }
 
 public class Complete {
     public static void main(String args[]) {
         Graph<Character> graph = new Graph<Character>(5);
+        //first part is adding edges to form a complete graph
         graph.setValue(0, 'A');
         graph.setValue(1, 'B');
         graph.setValue(2, 'C');
